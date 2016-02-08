@@ -1,10 +1,12 @@
 source "https://rubygems.org/"
 
 # App Stack
+gem 'bundler'
 gem "sinatra", "~> 1.4"
 gem 'pry'
 gem 'activesupport'
 gem 'viewpoint'
+gem 'dotenv'
 
 
 group :development do
