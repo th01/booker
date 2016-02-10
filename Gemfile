@@ -6,6 +6,7 @@ gem "sinatra", "~> 1.4"
 gem 'activesupport'
 gem 'viewpoint'
 gem 'dotenv'
+gem 'icalendar'
 
 
 group :development do
