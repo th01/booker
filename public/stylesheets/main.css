@@ -29,6 +29,8 @@
     height: 90%;
   }
   .green {
+    padding-left: 50px;
+
      position: relative;
      background-color: #92AD40;
      color: black;
