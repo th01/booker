@@ -20,46 +20,121 @@
   }
 
   .container {
-    position: : absolute;
+    position: relative;
+    height: 488px;
+    width: 804px;
   }
 
   #img {
-    padding-left: 50px;
-    width: 90%;
-    height: 90%;
+    padding-left: 25px;
+    width: 100%;
+    height: 100%;
   }
   .green {
-    padding-left: 50px;
-
-     position: relative;
-     background-color: #92AD40;
-     color: black;
-     opacity: .75
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    font-weight: bold;
+    background-color: #92AD40;
+    color: black;
+    opacity: .75
   }
 
   #room1 {
-    left: 110px;
-    top: 425px;
-    height: 40px;
-    width: 80px;
-    -ms-transform: rotate(22deg); /* IE 9 */
-    -webkit-transform: rotate(22deg); /* Chrome, Safari, Opera */
-    transform: rotate(22deg);
+    position: absolute;
+    left: 80px;
+    top: 390px;
+    height: 50px;
+    width: 110px;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Chrome, Safari, Opera */
+    transform: rotate(20deg);
   }
 
   #room2 {
     position: absolute;
-    left: 797px;
-    top: 500px;
-    height: 50px;
+    left: 203px;
+    top: 421px;
+    height: 36px;
     width: 30px;
-  }  
+  }
+
   #room3 {
     position: absolute;
-    left: 639px;
-    top: 372px;
-    height: 30px;
-    width: 20px;
+    left: 405px;
+    top: 273px;
+    height: 100px;
+    width: 80px;
+  }
+ 
+  #room4 {
+    position: absolute;
+    left: 587px;
+    top: 422px;
+    height: 40px;
+    width: 47px;
+  }
+
+  #room5 {
+    position: absolute;
+    left: 637px;
+    top: 422px;
+    height: 40px;
+    width: 47px;
+  }
+
+  #room6 {
+    position: absolute;
+    left: 691px;
+    top: 422px;
+    height: 40px;
+    width: 87px;
+  }
+
+  #room7 {
+    position: absolute;
+    left: 755px;
+    top: 368px;
+    height: 38px;
+    width: 40px;
+    -ms-transform: rotate(8deg); /* IE 9 */
+    -webkit-transform: rotate(8deg); /* Chrome, Safari, Opera */
+    transform: rotate(8deg);
+  } 
+
+  #room8 {
+    position: absolute;
+    left: 761px;
+    top: 268px;
+    height: 55px;
+    width: 40px;
+  }
+
+  #room9 {
+    position: absolute;
+    left: 650px;
+    top: 135px;
+    height: 38px;
+    width: 28px;
+  }
+  
+  #room10 {
+    position: absolute;
+    left: 588px;
+    top: 135px;
+    height: 38px;
+    width: 28px;
+  }
+
+  #room11 {
+    position: absolute;
+    left: 97px;
+    top: 127px;
+    height: 25px;
+    width: 38px;
+    -ms-transform: rotate(42deg); /* IE 9 */
+    -webkit-transform: rotate(42deg); /* Chrome, Safari, Opera */
+    transform: rotate(42deg);
   }
 
   .wrapper {
