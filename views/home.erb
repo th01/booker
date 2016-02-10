@@ -1,1 +1,72 @@
-<h2><%= __FILE__ %></h2>
+<h2>PeopleAdmin Meeting</h2>
+
+<div class="sidebar">
+  <h3>Meeting Requirements:</h3>
+  <%= erb :form %>
+</div>
+
+<body>
+  <div class="container">
+    <div id="room1" class="green">1</div>
+    <div id="room2" class="green">2</div>
+    <div id="room3" class="green">3</div>
+    <img id="img" src="/images/bookerAUS.png">
+  </div>
+</body>
+
+<!-- <div class="content">
+  <p>Welcome to the Sinatra Template! If you're seeing this page, then everything is working
+  as expected. To get started, delete this file (<code>views/welcome.erb)</code> and begin adding
+  your own actions to <code>app.rb</code>. For more information, see the README.</p>
+</div> -->
+
+<!-- <div class="sidebar">
+  <h3>Environment</h3>
+  <ul>
+    <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+    <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+    <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+    <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+  </ul>
+</div> -->
+
+
+<!--   <a href="http://c7.github.com/hazel/"><img src="/images/hazel_small.png" alt="Hazel" /></a>
+ -->
+
+<!-- <div id="tooltip"></div>div to hold tooltip.
+ --><!-- <svg width="960" height="600" id="statesvg"></svg> svg to hold the map.
+ -->
+
+<!--
+<script src="uStates.js"></script> creates uStates.
+<script src="http://d3js.org/d3.v3.min.js"></script>
+ -->
+<!--
+<script>
+
+  function tooltipHtml(n, d){ /* function to create html content string in tooltip div. */
+    return "<h4>"+n+"</h4><table>"+
+      "<tr><td>Low</td><td>"+(d.low)+"</td></tr>"+
+      "<tr><td>Average</td><td>"+(d.avg)+"</td></tr>"+
+      "<tr><td>High</td><td>"+(d.high)+"</td></tr>"+
+      "</table>";
+  }
+
+  var sampleData ={}; /* Sample random data. */
+  ["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
+  "ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH",
+  "MI", "WY", "MT", "ID", "WA", "DC", "TX", "CA", "AZ", "NV", "UT",
+  "CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN",
+  "WI", "MO", "AR", "OK", "KS", "LS", "VA"]
+    .forEach(function(d){
+      var low=Math.round(100*Math.random()),
+        mid=Math.round(100*Math.random()),
+        high=Math.round(100*Math.random());
+      sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]),
+          avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)};
+    });
+
+  /* draw states on id #statesvg */
+  uStates.draw("#statesvg", sampleData, tooltipHtml);
+</script> -->
