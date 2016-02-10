@@ -51,6 +51,23 @@
     opacity: .70
   }
 
+  .key {
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    position: absolute;
+    left: 300px;
+    top: 5px;
+    height: 120px;
+    width: 330px;
+  }
+
+ul {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
   #room1 {
     position: absolute;
     left: 80px;
