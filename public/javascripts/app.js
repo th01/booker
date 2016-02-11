@@ -1,23 +1,24 @@
 $(document).on('ready', function () {
 
-  $( "#datepicker" ).datetimepicker();
-
   var startDateTextBox = $('#start_date_picker');
   var endDateTextBox = $('#end_date_picker');
 
-  $.timepicker.datetimeRange(
-    startDateTextBox,
-    endDateTextBox,
-    {
-      minInterval: (1000*60*30), // 15 min
-      dateFormat: 'dd M yy',
-      timeFormat: 'HH:mm',
-      start: {}, // start picker options
-      end: {} // end picker options
-    }
-  );
+  if (startDateTextBox.length > 0 && endDateTextBox.length > 0) {
+    $.timepicker.datetimeRange(
+      startDateTextBox,
+      endDateTextBox,
+      {
+        minInterval: (1000*60*30), // 15 min
+        dateFormat: 'M dd yy',
+        timeFormat: 'HH:mm',
+        start: {}, // start picker options
+        end: {} // end picker options
+      }
+    );
+  }
 
   $('#submit_button').on('click', function () {
+    $('#schedule_meeting_button').show();
     $.ajax({
       method: "POST",
       url: "/busy_times",
@@ -27,11 +28,35 @@ $(document).on('ready', function () {
     });
   });
 
+  $('#schedule_meeting_button').on('click', function () {
+    $.ajax({
+      method: "POST",
+      url: "/schedule_meeting",
+      data: {
+        subject: 'this is the subject',
+        body: 'this is the body',
+        start_time: getStartTime(),
+        end_time: getEndTime(),
+        emails: getEmails(),
+        location: 'Some room'
+      }
+    }).done(function( message ) {
+      console.log(message);
+    });
+  });
+
   function getEmails () {
     var emails = $('.emails').children().map(function(){
-               return $.trim($(this).text());
+               return $.trim($(this).attr('data-email'));
             }).get();
     return emails;
+  }
+
+  function getRoomEmails () {
+    var roomEmails = $('.rooms').children().map(function(){
+               return $.trim($(this).attr('data-email'));
+            }).get();
+    return roomEmails;
   }
 
   function getStartTime () {

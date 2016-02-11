@@ -54,10 +54,10 @@ class Booker < Sinatra::Base
       cal = Icalendar::Calendar.new
       ics_str = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//PeopleAdmin//NONSGML Event Calendar//EN\n"
       ics_str << cal.event do |e|
-        e.dtstart     = Icalendar::Values::DateTime.new(Time.now + 100000)
-        e.dtend       = Icalendar::Values::DateTime.new(Time.now + 110000)
-        e.summary     = "Meeting with the man."
-        e.description = "Have a long lunch meeting and decide nothing..."
+        e.dtstart     = opts.fetch(:start_time)
+        e.dtend       = opts.fetch(:end_time)
+        e.summary     = opts.fetch(:subject)
+        e.description = opts.fetch(:body)
         e.ip_class    = "PRIVATE"
       end.to_ical
       ics_str << "END:VCALENDAR"
@@ -114,12 +114,12 @@ class Booker < Sinatra::Base
   post '/schedule_meeting' do
     redirect to('/login') unless logged_in?
     opts = {
-      subject:    params[:subject],
-      body:       params[:body],
-      start_time: params[:start_time],
-      end_time:   params[:end_time],
-      emails:     params[:emails],
-      location:   params[:location]
+      subject:    params.fetch('subject'),
+      body:       params.fetch('body'),
+      start_time: Time.parse(params.fetch('start_time')),
+      end_time:   Time.parse(params.fetch('end_time')),
+      emails:     params.fetch('emails'),
+      location:   params.fetch('location')
     }
     ics_file = build_ics(opts)
     send_meeting(opts, ics_file)
