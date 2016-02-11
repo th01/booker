@@ -39,4 +39,11 @@
         <option value="7" >7 Hours</option>
         <option value="8" >8 Hours</option>
       </select>
+
+      <select id="status" onchange="colorStatus()">
+        <option value="green">available</option>
+        <option value="red">busy</option>
+      </select>
+
+      <button type="button" onclick="colorStatus()">Submit</button>
   </form>
