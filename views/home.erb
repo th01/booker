@@ -1,3 +1,6 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
 <h2>The PeopleAdmin Meeting Booker Tool</h2>
 
 <div class="sidebar">
@@ -11,35 +14,82 @@
   <h3 id='somerandomjoecom'>somerandom@joe.com</h3>
   <h3 id='parkeryoungpeopleadmincom'>parker.young@peopleadmin.com</h3>
 </div>
-<div class="container">
-    <img id="img" src="/images/bookerAUS.png">
-    <div class="key" >
-      <h3>Room Key:</h3>
-      <ul>
-        <li>1 - Big 12</li>
-        <li>2 - City Limits</li>
-        <li>3 - The Quad</li>
-        <li>4 - ACC</li>
-        <li>5 - Big 10</li>
-        <li>6 - SEC</li>
-        <li>7 - Big East</li>
-        <li>8 - State Capital</li>
-        <li>9 - County Line</li>
-        <li>10 - WAC</li>
-        <li>11 - HRSuite</li>
-      </ul>
-    </div>
-    <div id="rooms">
-      <div id="room1" class="red" value="1">1</div>
-      <div id="room2" class="red" value="1">2</div>
-      <div id="room3" class="red" value="2">3</div>
-      <div id="room4" class="red" value="1">4</div>
-      <div id="room5" class="green" value="1">5</div>
-      <div id="room6" class="green" value="2">6</div>
-      <div id="room7" class="green" value="2">7</div>
-      <div id="room8" class="green" value="1">8</div>
-      <div id="room9" class="green" value="2">9</div>
-      <div id="room10" class="green" value="1">10</div>
-      <div id="room11" class="green" value="2">11</div>
-    </div>
-</div>
+<body>
+  <div class="container">
+      <img id="img" src="/images/bookerAUS.png">
+      <div class="key" >
+        <h3>Room Key:</h3>
+        <ul>
+          <li>1 - Big 12</li>
+          <li>2 - City Limits</li>
+          <li>3 - The Quad</li>
+          <li>4 - ACC</li>
+          <li>5 - Big 10</li>
+          <li>6 - SEC</li>
+          <li>7 - Big East</li>
+          <li>8 - State Capital</li>
+          <li>9 - County Line</li>
+          <li>10 - WAC</li>
+          <li>11 - HRSuite</li>
+        </ul>
+      </div>
+
+      <div class="attendees">
+        <h3>Attendees:</h3>
+        <ul id="attendees">
+        </ul>
+      </div>
+      
+      <div id="rooms">
+        <div id="room1" class="red" value="1">1</div>
+        <div id="room2" class="red" value="1">2</div>
+        <div id="room3" class="red" value="2">3</div>
+        <div id="room4" class="red" value="1">4</div>
+        <div id="room5" class="green" value="1">5</div>
+        <div id="room6" class="green" value="2">6</div>
+        <div id="room7" class="green" value="2">7</div>
+        <div id="room8" class="green" value="1">8</div>
+        <div id="room9" class="green" value="2">9</div>
+        <div id="room10" class="green" value="1">10</div>
+        <div id="room11" class="green" value="2">11</div>
+      </div>
+  </div>
+
+  <script>
+
+    function colorStatus(){
+      var selection = document.getElementById('status').value;
+      var div = document.getElementById('room3');
+      switch (selection) {
+        case "green":
+          div.className = 'green';
+          break;
+        case "red":
+          div.className = 'red';
+          break;
+      }
+    }
+
+    function addbtn(){
+      $("#addbutton").click(function(){
+          $("#attendees").append("<li>Appended item</li>");
+      });
+    }
+
+    // function colorStatus(){
+    //   var childDivs = document.getElementById('rooms').getElementByTagName('div');
+    //   for( i=0; i < childDivs.length; i++ ) {
+    //     var childDiv = childDivs[i];
+    //     switch (childDiv.value) {
+    //       case "1":
+    //         childDiv.className = 'green';
+    //         break;
+    //       case "2":
+    //         childDiv.className = 'red';
+    //         break;
+    //   }
+    // }
+
+  </script> 
+
+</body>

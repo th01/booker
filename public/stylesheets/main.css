@@ -19,6 +19,21 @@
     line-height: 18px;
   }
 
+  button {
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    padding: 3px;
+    border-radius: 4px;
+    background-color: white; 
+    border: 2px solid #008CBA;
+  }
+
+  button:hover {
+      background-color: #008CBA;
+      color: white;
+  }
+
   .container {
     position: relative;
     height: 488px;
@@ -56,7 +71,17 @@
     color: black;
     font-size: 14px;
     position: absolute;
-    left: 300px;
+    left: 320px;
+    top: 5px;
+    height: 120px;
+    width: 330px;
+  }
+
+  .attendees {
+    color: black;
+    font-size: 14px;
+    position: absolute;
+    left: 820px;
     top: 5px;
     height: 120px;
     width: 330px;
