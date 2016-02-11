@@ -51,37 +51,33 @@ class Booker < Sinatra::Base
 
     def build_ics(opts)
       cal = Icalendar::Calendar.new
-      ics_str = cal.event do |e|
-
-        e.dtstart     = Icalendar::Values::DateTime.new(Time.now)
-        e.dtend       = Icalendar::Values::DateTime.new(Time.now + 10000)
+      ics_str = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//PeopleAdmin//NONSGML Event Calendar//EN\n"
+      ics_str << cal.event do |e|
+        e.dtstart     = Icalendar::Values::DateTime.new(Time.now + 100000)
+        e.dtend       = Icalendar::Values::DateTime.new(Time.now + 110000)
         e.summary     = "Meeting with the man."
         e.description = "Have a long lunch meeting and decide nothing..."
         e.ip_class    = "PRIVATE"
       end.to_ical
+      ics_str << "END:VCALENDAR"
       ics_sha = Digest::SHA1.hexdigest(ics_str)
-      File.open("./ics/#{ics_sha}.ics", 'w') { |file| file.write(ics_str) }
+      ics_filename_str = "ics/#{ics_sha}.ics"
+      File.open(ics_filename_str, 'w') { |file| file.write(ics_str) }
+      File.open(ics_filename_str, 'r')
     end
 
-    def create_meeting
-
+    def send_meeting(opts, ics_file)
+      client.send_message(
+        subject: opts[:subject],
+        body:    opts[:body],
+        to_recipients: opts[:emails],
+        file_attachments: [ics_file]
+      ) {|msg| msg }
     end
   end
 
   get '/' do
     redirect to('/login') unless logged_in?
-
-    opts = {
-      subject: 'THIS IS A TEST',
-      start_time: Time.now,
-      end_time: Time.now + 10000,
-      emails: ['thooper@peopleadmin.com', 'travis.hooper@peopleadmin.com'],
-      location: 'Austin'
-
-    }
-    ics = build_ics(opts)
-
-
     erb :home
   end
 
@@ -107,9 +103,24 @@ class Booker < Sinatra::Base
   end
 
   post '/busy_times' do
+    redirect to('/login') unless logged_in?
     emails     = params[:emails]
     start_time = Time.parse(params[:start_time])
     end_time   = Time.parse(params[:end_time])
     busy_times(emails, start_time, end_time).to_json
+  end
+
+  post '/schedule_meeting' do
+    redirect to('/login') unless logged_in?
+    opts = {
+      subject:    params[:subject],
+      body:       params[:body],
+      start_time: params[:start_time],
+      end_time:   params[:end_time],
+      emails:     params[:emails],
+      location:   params[:location]
+    }
+    ics_file = build_ics(opts)
+    send_meeting(opts, ics_file)
   end
 end
