@@ -1,49 +1,7 @@
 <form>
-      Attendees: <input type="text" name="fname">
-      Start time:
-      <select>
-        <option value="8:00" >8:00</option>
-        <option value="8:30" >8:30</option>
-        <option value="9:00" >9:00</option>
-        <option value="9:30" >9:30</option>
-        <option value="10:00" >10:00</option>
-        <option value="10:30" >10:30</option>
-        <option value="11:00" >11:00</option>
-        <option value="11:30" >11:30</option>
-        <option value="12:00" >12:00</option>
-        <option value="12:30" >12:30</option>
-        <option value="1:00" >1:00</option>
-        <option value="1:30" >1:30</option>
-        <option value="2:00" >2:00</option>
-        <option value="2:30" >2:30</option>
-        <option value="3:00" >3:00</option>
-        <option value="3:30" >3:30</option>
-        <option value="4:00" >4:00</option>
-        <option value="4:30" >4:30</option>
-        <option value="5:00" >5:00</option>
-      </select>
+  Attendees: <input type="text" name="fname">
+  Start Time: <input type="text" id="start_date_picker">
+  End Time: <input type="text" id="end_date_picker">
 
-      Duration:
-      <select>
-        <option value=".25" >15 Minutes</option>
-        <option value="" >30 Minutes</option>
-        <option value="45" >45 Minutes</option>
-        <option value="1" >1 Hour</option>
-        <option value="1.5" >1.5 Hours</option>
-        <option value="1" >1 Hours</option>
-        <option value="2" >2 Hours</option>
-        <option value="3" >3 Hours</option>
-        <option value="4" >4 Hours</option>
-        <option value="5" >5 Hours</option>
-        <option value="6" >6 Hours</option>
-        <option value="7" >7 Hours</option>
-        <option value="8" >8 Hours</option>
-      </select>
-
-      <select id="status" onchange="colorStatus()">
-        <option value="green">available</option>
-        <option value="red">busy</option>
-      </select>
-
-      <button type="button" onclick="colorStatus()">Submit</button>
-  </form>
+  <button id="submit_button" type="button">Submit</button>
+</form>
