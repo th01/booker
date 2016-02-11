@@ -1,5 +1,7 @@
 <form>
-      Attendees: <input type="text" name="fname">
+      Attendee: <input type="text" id="addName" value"addValue">
+      <button id="addButton" type="button" onclick="addbtn()">add</button>
+      &nbsp;
       Start time:
       <select>
         <option value="8:00" >8:00</option>
@@ -22,7 +24,7 @@
         <option value="4:30" >4:30</option>
         <option value="5:00" >5:00</option>
       </select>
-
+      &nbsp;
       Duration:
       <select>
         <option value=".25" >15 Minutes</option>
@@ -39,11 +41,13 @@
         <option value="7" >7 Hours</option>
         <option value="8" >8 Hours</option>
       </select>
+      &nbsp;
 
       <select id="status" onchange="colorStatus()">
         <option value="green">available</option>
         <option value="red">busy</option>
       </select>
+      &nbsp;
 
       <button type="button" onclick="colorStatus()">Submit</button>
   </form>
