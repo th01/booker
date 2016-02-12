@@ -1,6 +1,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <h2>The PeopleAdmin Meeting Tool</h2>
 
+
 <div class="sidebar">
   <h3>Meeting Requirements:</h3>
   <%= erb :form %>
@@ -74,6 +75,12 @@
         var email_option = $('#attendees').append("<li id='" + email_id + "' " + "'>" + email + "</li>");
       });
     });
+
+    function addbtn(){
+      $("#addbutton").click(function(){
+          $("#attendees").append("<li>Appended item</li>");
+      });
+    }
 
     // function colorStatus(){
     //   var childDivs = document.getElementById('rooms').getElementByTagName('div');
