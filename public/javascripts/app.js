@@ -1,5 +1,15 @@
 $(document).on('ready', function () {
 
+  $("#dialog").dialog({
+    autoOpen: false,
+    modal: true,
+    open: function(){
+      $('.ui-widget-overlay').bind('click',function(){
+        $('#dialog').dialog('close');
+      });
+    }
+  });
+
   var startDateTextBox = $('#start_date_picker');
   var endDateTextBox = $('#end_date_picker');
 
@@ -32,23 +42,28 @@ $(document).on('ready', function () {
   $('#submit_button').on('click', function () {
     $('.green').removeClass('green');
     $('.red').removeClass('red');
-    $('#schedule_meeting_button').show();
+    $('#add-subject-and-body-button').show();
     $.ajax({
       method: "POST",
       url: "/busy_times",
       data: { emails: getEmails().concat(getRoomEmails()), start_time: getStartTime(), end_time: getEndTime() }
     }).done(function( busy_times ) {
-      process_busy_times(JSON.parse(busy_times));
+      processBusyTimes(JSON.parse(busy_times));
     });
   });
 
-  $('#schedule_meeting_button').on('click', function () {
+  $('#add-subject-and-body-button').on('click', function () {
+    $('#dialog').dialog('open');
+  });
+
+  $('#schedule-meeting-button').on('click', function () {
+    $('#dialog').dialog('close');
     $.ajax({
       method: "POST",
       url: "/schedule_meeting",
       data: {
-        subject: 'this is the subject',
-        body: 'this is the body',
+        subject: getSubject(),
+        body: getBody(),
         start_time: getStartTime(),
         end_time: getEndTime(),
         emails: getEmails(),
@@ -57,6 +72,10 @@ $(document).on('ready', function () {
     }).done(function( message ) {
       console.log(message);
     });
+  });
+
+  $('#add_email').autocomplete({
+      source: emails
   });
 
   function getEmails () {
@@ -81,7 +100,15 @@ $(document).on('ready', function () {
     return endDateTextBox.val();
   }
 
-  function process_busy_times (busy_times) {
+  function getSubject () {
+    return $('#subject').val();
+  }
+
+  function getBody () {
+    return $('#body').val();
+  }
+
+  function processBusyTimes (busy_times) {
     for (var email in busy_times) {
       var $email = $('#' + email.replace(/[\.\@]/g, ''));
       if (busy_times[email].length > 0) {
