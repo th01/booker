@@ -93,9 +93,15 @@
     -moz-columns: 2;
   }
 
-.selected-room {
-  /*style that we want when room is selected*/
-}
+  .selected-room {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    font-weight: bold;
+    background-color: #fbbc05;
+    color: black;
+    opacity: .9;
+  }
 
   #conf402peopleadmincom {
     position: absolute;
@@ -175,7 +181,7 @@
     width: 28px;
   }
 
-  #conf418peopleadmin-comdomainlocalhostcom {
+  #conf435peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 588px;
     top: 135px;
