@@ -29,6 +29,8 @@ $(document).on('ready', function () {
   });
 
   $('#submit_button').on('click', function () {
+    $('.green').removeClass('green');
+    $('.red').removeClass('red');
     $('#schedule_meeting_button').show();
     $.ajax({
       method: "POST",

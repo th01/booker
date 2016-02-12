@@ -46,23 +46,21 @@
     height: 100%;
   }
 
-  .green {
-    text-align: center;
+  .room {
     vertical-align: middle;
+    text-align: center;
     line-height: 30px;
     font-weight: bold;
-    background-color: green;
     color: black;
+  }
+
+  .green {
+    background-color: green;
     opacity: .70
   }
 
   .red {
-    text-align: center;
-    vertical-align: middle;
-    line-height: 30px;
-    font-weight: bold;
     background-color: red;
-    color: black;
     opacity: .70
   }
 
