@@ -25,7 +25,7 @@
     color: black;
     padding: 3px;
     border-radius: 4px;
-    background-color: white; 
+    background-color: white;
     border: 2px solid #008CBA;
   }
 
@@ -77,7 +77,7 @@
     width: 280px;
   }
 
-  .attendees {
+  .emails {
     color: black;
     font-size: 14px;
     position: absolute;
@@ -93,7 +93,11 @@
     -moz-columns: 2;
   }
 
-  #room1 {
+.selected-room {
+  /*style that we want when room is selected*/
+}
+
+  #conf402peopleadmincom {
     position: absolute;
     left: 80px;
     top: 390px;
@@ -104,7 +108,7 @@
     transform: rotate(20deg);
   }
 
-  #room2 {
+  #conf404peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 203px;
     top: 421px;
@@ -112,15 +116,15 @@
     width: 30px;
   }
 
-  #room3 {
+  #confquadpeopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 405px;
     top: 273px;
     height: 100px;
     width: 80px;
   }
- 
-  #room4 {
+
+  #conf414peopleadmincom {
     position: absolute;
     left: 587px;
     top: 422px;
@@ -128,7 +132,7 @@
     width: 47px;
   }
 
-  #room5 {
+  #conf413peopleadmincom {
     position: absolute;
     left: 637px;
     top: 422px;
@@ -136,7 +140,7 @@
     width: 47px;
   }
 
-  #room6 {
+  #conf415peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 691px;
     top: 422px;
@@ -144,7 +148,7 @@
     width: 87px;
   }
 
-  #room7 {
+  #conf416peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 755px;
     top: 368px;
@@ -153,9 +157,9 @@
     -ms-transform: rotate(8deg); /* IE 9 */
     -webkit-transform: rotate(8deg); /* Chrome, Safari, Opera */
     transform: rotate(8deg);
-  } 
+  }
 
-  #room8 {
+  #conf418peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 761px;
     top: 268px;
@@ -163,31 +167,20 @@
     width: 40px;
   }
 
-  #room9 {
+  #conf423peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 650px;
     top: 135px;
     height: 38px;
     width: 28px;
   }
-  
-  #room10 {
+
+  #conf418peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 588px;
     top: 135px;
     height: 38px;
     width: 28px;
-  }
-
-  #room11 {
-    position: absolute;
-    left: 97px;
-    top: 127px;
-    height: 25px;
-    width: 38px;
-    -ms-transform: rotate(42deg); /* IE 9 */
-    -webkit-transform: rotate(42deg); /* Chrome, Safari, Opera */
-    transform: rotate(42deg);
   }
 
   .wrapper {
@@ -276,4 +269,3 @@
     line-height: 24px;
   }
 }
-
