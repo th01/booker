@@ -17,6 +17,11 @@ $(document).on('ready', function () {
     );
   }
 
+  $('#rooms').children().on('click', function () {
+    $('#rooms').children().removeClass('selected-room');
+    $(this).addClass('selected-room');
+  });
+
   $('#submit_button').on('click', function () {
     $('#schedule_meeting_button').show();
     $.ajax({

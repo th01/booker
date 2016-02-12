@@ -68,6 +68,10 @@ ul {
   -moz-columns: 3;
 }
 
+.selected-room {
+  /*style that we want when room is selected*/
+}
+
   #conf402peopleadmincom {
     position: absolute;
     left: 80px;
