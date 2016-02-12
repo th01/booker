@@ -22,7 +22,7 @@ $(document).on('ready', function () {
     $.ajax({
       method: "POST",
       url: "/busy_times",
-      data: { emails: getEmails(), start_time: getStartTime(), end_time: getEndTime() }
+      data: { emails: getEmails().concat(getRoomEmails()), start_time: getStartTime(), end_time: getEndTime() }
     }).done(function( busy_times ) {
       process_busy_times(JSON.parse(busy_times));
     });
@@ -53,7 +53,7 @@ $(document).on('ready', function () {
   }
 
   function getRoomEmails () {
-    var roomEmails = $('.rooms').children().map(function(){
+    var roomEmails = $('#rooms').children().map(function(){
                return $.trim($(this).attr('data-email'));
             }).get();
     return roomEmails;

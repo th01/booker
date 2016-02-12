@@ -68,7 +68,7 @@ ul {
   -moz-columns: 3;
 }
 
-  #room1 {
+  #conf402peopleadmincom {
     position: absolute;
     left: 80px;
     top: 390px;
@@ -79,7 +79,7 @@ ul {
     transform: rotate(20deg);
   }
 
-  #room2 {
+  #conf404peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 203px;
     top: 421px;
@@ -87,15 +87,15 @@ ul {
     width: 30px;
   }
 
-  #room3 {
+  #confquadpeopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 405px;
     top: 273px;
     height: 100px;
     width: 80px;
   }
- 
-  #room4 {
+
+  #conf414peopleadmincom {
     position: absolute;
     left: 587px;
     top: 422px;
@@ -103,7 +103,7 @@ ul {
     width: 47px;
   }
 
-  #room5 {
+  #conf413peopleadmincom {
     position: absolute;
     left: 637px;
     top: 422px;
@@ -111,7 +111,7 @@ ul {
     width: 47px;
   }
 
-  #room6 {
+  #conf415peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 691px;
     top: 422px;
@@ -119,7 +119,7 @@ ul {
     width: 87px;
   }
 
-  #room7 {
+  #conf416peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 755px;
     top: 368px;
@@ -128,9 +128,9 @@ ul {
     -ms-transform: rotate(8deg); /* IE 9 */
     -webkit-transform: rotate(8deg); /* Chrome, Safari, Opera */
     transform: rotate(8deg);
-  } 
+  }
 
-  #room8 {
+  #conf418peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 761px;
     top: 268px;
@@ -138,31 +138,20 @@ ul {
     width: 40px;
   }
 
-  #room9 {
+  #conf423peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 650px;
     top: 135px;
     height: 38px;
     width: 28px;
   }
-  
-  #room10 {
+
+  #conf418peopleadmin-comdomainlocalhostcom {
     position: absolute;
     left: 588px;
     top: 135px;
     height: 38px;
     width: 28px;
-  }
-
-  #room11 {
-    position: absolute;
-    left: 97px;
-    top: 127px;
-    height: 25px;
-    width: 38px;
-    -ms-transform: rotate(42deg); /* IE 9 */
-    -webkit-transform: rotate(42deg); /* Chrome, Safari, Opera */
-    transform: rotate(42deg);
   }
 
   .wrapper {
@@ -250,4 +239,3 @@ ul {
     line-height: 24px;
   }
 }
-
