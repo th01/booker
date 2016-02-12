@@ -19,8 +19,9 @@ $(document).on('ready', function () {
 
   $('#add_button').on('click', function() {
     var email = $('#add_email').val();
+    var name = email.replace(/\@.*$/, "").replace(/\./, ' ').replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
     var email_id = email.replace(/[\@\.]/g, "");
-    var email_option = $('#attendees').append("<li data-email=" + email + " id='" + email_id + "' " + "'>" + email + "</li>");
+    var email_option = $('#attendees').append("<li data-email=" + email + " id='" + email_id + "' " + "'>" + name + "</li>");
   });
 
   $('#rooms').children().on('click', function () {
