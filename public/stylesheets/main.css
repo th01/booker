@@ -72,26 +72,26 @@
     font-size: 14px;
     position: absolute;
     left: 320px;
-    top: 5px;
-    height: 120px;
-    width: 330px;
+    top: -25px;
+    height: 140px;
+    width: 280px;
   }
 
   .attendees {
     color: black;
     font-size: 14px;
     position: absolute;
-    left: 820px;
-    top: 5px;
+    left: 650px;
+    top: -25px;
     height: 120px;
     width: 330px;
   }
 
-ul {
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
-}
+  #roomkey {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
 
   #room1 {
     position: absolute;
@@ -227,6 +227,7 @@ ul {
   }
 
   .sidebar {
+    margin-bottom: 30px;
     background: #eee;
     border: 1px solid #ccc;
     /*float: right;*/

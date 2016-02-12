@@ -1,25 +1,23 @@
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-</head>
-<h2>The PeopleAdmin Meeting Booker Tool</h2>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<h2>The PeopleAdmin Meeting Tool</h2>
 
 <div class="sidebar">
   <h3>Meeting Requirements:</h3>
   <%= erb :form %>
 </div>
 
-<div class="emails">
+<!-- <div class="emails">
   <h3 id='travishooperpeopleadmincom'>travis.hooper@peopleadmin.com</h3>
   <h3 id='thooperpeopleadmincom'>thooper@peopleadmin.com</h3>
   <h3 id='somerandomjoecom'>somerandom@joe.com</h3>
   <h3 id='parkeryoungpeopleadmincom'>parker.young@peopleadmin.com</h3>
-</div>
+</div> -->
 <body>
   <div class="container">
       <img id="img" src="/images/bookerAUS.png">
       <div class="key" >
         <h3>Room Key:</h3>
-        <ul>
+        <ul id="roomkey">
           <li>1 - Big 12</li>
           <li>2 - City Limits</li>
           <li>3 - The Quad</li>
@@ -51,30 +49,31 @@
         <div id="room8" class="green" value="1">8</div>
         <div id="room9" class="green" value="2">9</div>
         <div id="room10" class="green" value="1">10</div>
-        <div id="room11" class="green" value="2">11</div>
       </div>
   </div>
 
   <script>
 
-    function colorStatus(){
-      var selection = document.getElementById('status').value;
-      var div = document.getElementById('room3');
-      switch (selection) {
-        case "green":
-          div.className = 'green';
-          break;
-        case "red":
-          div.className = 'red';
-          break;
-      }
-    }
+    // function colorStatus(){
+    //   var selection = document.getElementById('status').value;
+    //   var div = document.getElementById('room3');
+    //   switch (selection) {
+    //     case "green":
+    //       div.className = 'green';
+    //       break;
+    //     case "red":
+    //       div.className = 'red';
+    //       break;
+    //   }
+    // }
 
-    function addbtn(){
-      $("#addbutton").click(function(){
-          $("#attendees").append("<li>Appended item</li>");
+    $(document).ready(function() {
+      $('#add_button').click(function() {
+        var email = $('#add_email').val();
+        var email_id = email.replace(/[\@\.]/g, "")
+        var email_option = $('#attendees').append("<li id='" + email_id + "' " + "'>" + email + "</li>");
       });
-    }
+    });
 
     // function colorStatus(){
     //   var childDivs = document.getElementById('rooms').getElementByTagName('div');
