@@ -64,6 +64,11 @@
     opacity: .70
   }
 
+  .selected-room {
+    background-color: #fbbc05;
+    opacity: .9;
+  }
+
   .key {
     background-color: white;
     color: black;
@@ -91,15 +96,6 @@
     -moz-columns: 2;
   }
 
-  .selected-room {
-    text-align: center;
-    vertical-align: middle;
-    line-height: 30px;
-    font-weight: bold;
-    background-color: #fbbc05;
-    color: black;
-    opacity: .9;
-  }
 
   #conf402peopleadmincom {
     position: absolute;
