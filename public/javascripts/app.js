@@ -35,8 +35,12 @@ $(document).on('ready', function () {
   });
 
   $('#rooms').children().on('click', function () {
-    $('#rooms').children().removeClass('selected-room');
-    $(this).addClass('selected-room');
+    if ($(this).attr('class').match(/selected-room/)) {
+      $('#rooms').children().removeClass('selected-room');
+    } else {
+      $('#rooms').children().removeClass('selected-room');
+      $(this).addClass('selected-room');
+    }
   });
 
   $('#submit_button').on('click', function () {
